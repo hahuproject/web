@@ -1,0 +1,35 @@
+.pic-picker {
+  height: 100%;
+  width: 100%;
+
+  //   border: 1px solid red;
+
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  row-gap: 2.4rem;
+
+  &__display {
+    height: 12rem;
+    width: 12rem;
+
+    border-radius: 0.8rem;
+
+    background-color: $color-light-grey;
+
+    overflow: hidden;
+
+    & > img {
+      height: 100%;
+      width: 100%;
+
+      object-fit: contain;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+}

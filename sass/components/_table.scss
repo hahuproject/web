@@ -1,0 +1,39 @@
+.table {
+  width: 100%;
+
+  table-layout: auto;
+  border-collapse: collapse;
+
+  position: relative;
+  text-indent: initial;
+
+  & > thead {
+    vertical-align: middle;
+    background-color: $color-light-blue;
+    & > tr {
+      font-size: 1.1rem;
+      height: 4rem;
+      & > th {
+        text-align: start;
+        display: table-cell;
+        // border: 1px solid red;
+        padding: 0rem 1.2rem;
+      }
+    }
+  }
+
+  & > tbody {
+    height: 100%;
+
+    & > tr {
+      height: 4.8rem;
+      vertical-align: middle;
+      border-bottom: 1px solid $color-light-grey;
+      font-size: 1rem;
+
+      & > td {
+        padding: 0rem 1.2rem;
+      }
+    }
+  }
+}

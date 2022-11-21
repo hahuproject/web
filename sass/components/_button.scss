@@ -1,0 +1,134 @@
+@mixin paintNormalButton($bgColor, $textColor) {
+  background-color: $bgColor;
+  color: $textColor;
+
+  &:hover {
+    background-color: rgba($color: $bgColor, $alpha: 0.9);
+  }
+
+  .button__trailing > div > svg {
+    fill: $textColor !important;
+  }
+}
+
+@mixin paintOutlinedButton($color) {
+  background-color: transparent;
+  color: $color;
+  border: 1px solid $color;
+
+  &:hover {
+    border-color: rgba($color: $color, $alpha: 0.9);
+  }
+
+  .button__leading > div > svg {
+    fill: $color !important;
+  }
+  .button__trailing > div > svg {
+    fill: $color !important;
+  }
+}
+
+@mixin paintFlatButton($textColor) {
+  background-color: transparent;
+  color: $textColor;
+
+  &:hover {
+    color: rgba($color: $textColor, $alpha: 0.9);
+  }
+
+  .button__leading > div > svg {
+    fill: $textColor !important;
+  }
+  .button__trailing > div > svg {
+    fill: $textColor !important;
+  }
+}
+
+.button {
+  width: 100%;
+  border-radius: 0.8rem;
+
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 0.8rem;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: all 0.4s ease-in-out;
+
+  padding: 0rem 1.2rem;
+
+  &--disabled {
+    cursor: not-allowed;
+    background-color: $color-grey !important;
+    color: white !important;
+  }
+
+  //Size
+  &--s {
+    height: 3.2rem;
+    font-size: 1rem;
+  }
+  &--m {
+    height: 3.8rem;
+    min-width: 16rem;
+    font-size: 1.4rem;
+  }
+  &--l {
+    height: 4.4rem;
+    min-width: 16rem;
+    font-size: 1.6rem;
+  }
+  &--xl {
+    height: 4.8rem;
+    font-size: 1.6rem;
+  }
+
+  //Type
+  //NORMAL
+  &--normal {
+    &--primary {
+      @include paintNormalButton($color-primary, $color-white);
+    }
+    &--main {
+      @include paintNormalButton($color-main, $color-white);
+    }
+    &--danger {
+      @include paintNormalButton($color-danger, $color-white);
+    }
+  }
+
+  //OUTLINED
+  &--outlined {
+    &--primary {
+      @include paintOutlinedButton($color-primary);
+    }
+    &--main {
+      @include paintOutlinedButton($color-main);
+    }
+    &--danger {
+      @include paintOutlinedButton($color-danger);
+    }
+  }
+
+  //FLAT
+  &--flat {
+    &--primary {
+      @include paintFlatButton($color-primary);
+    }
+    &--main {
+      @include paintFlatButton($color-main);
+    }
+    &--white {
+      @include paintFlatButton($color-white);
+    }
+    &--danger {
+      @include paintFlatButton($color-danger);
+    }
+  }
+}

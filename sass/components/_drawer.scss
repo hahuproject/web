@@ -1,0 +1,24 @@
+.drawer {
+  height: 100vh;
+  width: 90%;
+  max-width: 24rem;
+
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: $z-index-l;
+
+  // border: 1px solid red;
+
+  background-color: rgba($color: $color-primary, $alpha: 0.9);
+
+  transition: all 0.4s ease;
+
+  &--open {
+    left: 0;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

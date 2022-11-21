@@ -1,0 +1,97 @@
+.home-header {
+  height: 6.4rem;
+  width: 100%;
+
+  //   padding: 0rem 1.2rem;
+
+  background-color: $color-white;
+
+  display: flex;
+  align-items: center;
+
+  &__menu {
+    cursor: pointer;
+    margin-left: 1.2rem;
+    flex: 1;
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+
+  &__search {
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    @include respond(tab-land) {
+      flex: 1;
+    }
+    &--icon {
+      cursor: pointer;
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+    &--full {
+      display: none;
+      @include respond(tab-land) {
+        display: flex;
+      }
+    }
+  }
+
+  &__setting {
+    cursor: pointer;
+    margin-right: 1.2rem;
+
+    @include respond(tab-land) {
+      margin-right: 2.4rem;
+    }
+  }
+
+  &__profile {
+    // cursor: none;
+    height: 100%;
+    padding: 1.2rem;
+    width: max-content;
+    display: grid;
+    column-gap: 1.2rem;
+    align-items: center;
+    align-content: center;
+    grid-template-areas:
+      "pic name"
+      "pic role";
+
+    // border: 1px solid red;
+
+    background-color: $color-light-blue;
+
+    .home-header-profile {
+      &__pic {
+        grid-area: pic;
+        height: 3.2rem;
+        width: 3.2rem;
+
+        border-radius: 50%;
+
+        overflow: hidden;
+
+        background-color: $color-grey;
+
+        & > img {
+          height: 100%;
+          width: 100%;
+
+          object-fit: cover;
+        }
+      }
+      &__name {
+        font-size: 1.2rem;
+        grid-area: name;
+      }
+      &__role {
+        font-size: 1rem;
+        grid-area: role;
+        color: $color-grey;
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+.register {
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+
+  background-image: linear-gradient($color-accent, $color-primary);
+
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 1.6rem;
+  align-content: center;
+  justify-items: center;
+
+  padding: 5vw 0rem;
+
+  // @include respond(tab-land) {
+  //   max-height: 100vh;
+  //   overflow: scroll;
+  // }
+
+  .register__form {
+    display: grid;
+    grid-auto-flow: row;
+    align-content: center;
+    justify-items: center;
+
+    @include respond(tab-land) {
+      padding: 0 4rem;
+    }
+
+    &__label {
+      &--heading {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $color-primary;
+
+        margin-bottom: 1.2rem;
+      }
+
+      &--paragraph {
+        max-width: 27rem;
+        font-size: 1.2rem;
+        text-align: center;
+        color: $color-grey;
+        margin-bottom: 4rem;
+      }
+    }
+
+    &--admin {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      @include respond(tab-land) {
+        display: grid;
+        grid-template-areas:
+          "personal_break personal_break personal_break personal_break"
+          "fname lname email phone"
+          // "employmentType x c x"
+          "address_break address_break address_break y"
+          "country region city pic"
+          "sub_city woreda house_no pic"
+          "account_break account_break account_break x"
+          "username password confirm_password x";
+        column-gap: 2.4rem;
+      }
+    }
+    &--sub-registry {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      @include respond(tab-land) {
+        display: grid;
+        grid-template-areas:
+          "personal_break personal_break personal_break personal_break"
+          "fname lname email phone"
+          "department . . ."
+          "address_break address_break address_break y"
+          "country region city pic"
+          "sub_city woreda house_no pic"
+          "account_break account_break account_break x"
+          "username password confirm_password x";
+        column-gap: 2.4rem;
+      }
+    }
+
+    &--instructor {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      @include respond(tab-land) {
+        display: grid;
+        grid-template-areas:
+          "personal_break personal_break personal_break personal_break"
+          "fname lname email phone"
+          "employmentType . . ."
+          "address_break address_break address_break y"
+          "country region city pic"
+          "sub_city woreda house_no pic"
+          "account_break account_break account_break x"
+          "username password confirm_password x";
+        column-gap: 2.4rem;
+
+        // & > .drop-down {
+        //   grid-area: employmentType;
+        // }
+      }
+    }
+    &--student {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      @include respond(tab-land) {
+        display: grid;
+        grid-template-areas:
+          "personal_break personal_break personal_break personal_break"
+          "fname lname mname email"
+          "phone gender birthDate birthPlace"
+          "disability disability . pic"
+          "academic_break academic_break academic_break pic"
+          "previousSchool averageMarkForHighSchool matricResult pic"
+          "program department class pic"
+          "address_break address_break address_break address_break"
+          "country region city sub_city"
+          "woreda house_no . ."
+          "emergency_contact_break emergency_contact_break emergency_contact_break emergency_contact_break"
+          "emergencyContactName emergencyContactPhone emergencyContactRelation ."
+          "emergency_contact_address_break emergency_contact_address_break emergency_contact_address_break emergency_contact_address_break"
+          "emergencyContactCountry emergencyContactRegion emergencyContactCity emergencyContactSubcity"
+          "emergencyContactWoreda emergencyContactHouseNo . ."
+          "account_break account_break account_break account_break"
+          "username password confirm_password .";
+        column-gap: 2.4rem;
+
+        // & > .drop-down {
+        //   grid-area: employmentType;
+        // }
+      }
+    }
+
+    &__tag {
+      font-size: 1rem;
+      color: $color-grey;
+      padding: 2.4rem 1.6rem;
+      margin-bottom: 1.2rem;
+
+      position: relative;
+      text-transform: uppercase;
+
+      // border: 1px solid red;
+
+      display: flex;
+      align-items: center;
+
+      & > :first-child {
+        flex: 1;
+        width: 100%;
+      }
+
+      & > :last-child {
+        height: 0.1rem;
+        width: 100%;
+
+        margin-left: 1.2rem;
+        background-color: $color-light-grey;
+      }
+
+      &::after {
+        content: "";
+        height: 0.4rem;
+        width: 1rem;
+
+        position: absolute;
+        top: 48%;
+        left: 0;
+
+        background-color: $color-light-grey;
+      }
+
+      // &::before {
+      //   content: "";
+      //   height: 0.2rem;
+      //   width: calc(100% - 30%);
+
+      //   position: absolute;
+      //   top: 50%;
+      //   right: 0;
+
+      //   background-color: $color-light-grey;
+      // }
+    }
+
+    &__action {
+      width: 100%;
+      @include respond(tab-land) {
+        width: max-content;
+      }
+    }
+  }
+
+  &__login {
+    color: $color-white;
+
+    display: grid;
+    grid-auto-flow: column;
+    // column-gap: 1.2rem;
+    align-items: center;
+    justify-items: center;
+  }
+}

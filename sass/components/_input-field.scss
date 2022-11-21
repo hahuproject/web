@@ -1,0 +1,90 @@
+.input-field {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+
+  &__label {
+    font-size: 1.3rem;
+    color: $color-grey;
+
+    &--error {
+      color: $color-danger;
+    }
+  }
+
+  &__input {
+    width: 100%;
+
+    //Size
+
+    &--s {
+      height: 3.2rem;
+
+      & > input {
+        font-size: 1.2rem;
+      }
+    }
+    &--m {
+      height: 4rem;
+      min-width: 24rem;
+
+      & > input {
+        font-size: 1.4rem;
+      }
+    }
+
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 1.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid $color-light-grey;
+
+    margin: 1.2rem 0rem;
+
+    & > input {
+      border: none;
+      border-radius: 0.8rem;
+      height: 100%;
+      width: 100%;
+      outline: none;
+
+      padding: 0rem 1.2rem;
+      // &:-webkit-autofill {
+      //   -webkit-text-fill-color: red !important;
+      //   background-color: black !important;
+      //   background-image: none !important;
+      // }
+      // &:-webkit-autofill,
+      // &:-webkit-autofill-strong-password,
+      // &:-webkit-autofill-strong-password-viewable {
+      //   background-color: white !important;
+      // }
+    }
+    &--error {
+      border: 1px solid $color-danger;
+    }
+  }
+
+  &__error-label {
+    padding-left: 0.4rem;
+    color: $color-danger;
+    font-size: 0.8rem;
+  }
+}
+
+// input:-webkit-autofill,
+// input:-webkit-autofill-strong-password,
+// input:-webkit-autofill-strong-password-viewable {
+//   background-color: white;
+//   background-image: none;
+//   color: black;
+// }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}

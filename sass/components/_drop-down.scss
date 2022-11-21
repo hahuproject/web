@@ -1,0 +1,50 @@
+.drop-down {
+  //   margin: 50px;
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  //   background: url(https://stackoverflow.com/favicon.ico) 96% / 20% no-repeat
+  //     #eee;
+
+  display: grid;
+  grid-auto-flow: row;
+
+  &__label {
+    font-size: 1.3rem;
+    color: $color-grey;
+
+    &--error {
+      color: $color-danger;
+    }
+  }
+
+  &__select {
+    background: $color-white;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid $color-light-grey;
+    // height: auto;
+    // height: 4rem;
+
+    outline: none;
+
+    margin: 1.2rem 0rem;
+
+    &--error {
+      border: 1px solid $color-danger;
+    }
+
+    font-size: 1.4rem;
+
+    & > :first-child {
+      color: $color-grey;
+    }
+  }
+
+  &__error-label {
+    padding-left: 0.4rem;
+    color: $color-danger;
+    font-size: 0.8rem;
+  }
+}

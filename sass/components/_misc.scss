@@ -1,0 +1,385 @@
+.spacer {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.table-search {
+  height: max-content;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1.2rem;
+  align-items: center;
+
+  color: $color-grey;
+
+  //   border: 1px solid red;
+}
+
+.book-tile {
+  height: 22rem;
+  width: 16rem;
+
+  // border: 1px solid red;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  box-shadow: 0rem 0rem 0.4rem rgba($color: #000000, $alpha: 0.2);
+  border-radius: 0.8rem;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-areas:
+    "cover"
+    "title"
+    "author";
+
+  &__cover {
+    grid-area: cover;
+
+    height: 16rem;
+    width: 16rem;
+
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    overflow: hidden;
+
+    // background-color: black;
+
+    & > img {
+      height: 100%;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+  &__title {
+    grid-area: title;
+    padding: 0rem 0.4rem;
+    text-align: center;
+
+    color: $color-primary;
+
+    font-size: 1.4rem;
+  }
+  &__author {
+    grid-area: author;
+    text-align: center;
+    font-size: 0.8rem;
+    color: $color-grey;
+  }
+}
+
+.message-user {
+  height: 7.2rem;
+  width: 100%;
+
+  cursor: pointer;
+
+  border-bottom: 1px solid $color-light-grey;
+
+  &--active {
+    border-bottom-color: $color-main;
+
+    .message-user {
+      &__pic {
+        border: 2px solid $color-main;
+      }
+      &__name {
+        color: $color-main;
+      }
+    }
+  }
+
+  &--small {
+    height: 5.6rem;
+  }
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "pic name date"
+    "pic message x";
+  align-content: center;
+  justify-content: flex-start;
+  column-gap: 1.2rem;
+
+  &__pic {
+    grid-area: pic;
+    height: 4rem;
+    width: 4rem;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 1px solid red;
+
+    & > img {
+      height: 100%;
+      width: 100%;
+
+      object-fit: cover;
+    }
+
+    &--small {
+      height: 3.2rem;
+      width: 3.2rem;
+    }
+  }
+
+  &__name {
+    grid-area: name;
+    // border: 1px solid red;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    line-height: 2rem;
+
+    text-transform: capitalize;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    &--small {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__message {
+    grid-area: message;
+    // border: 1px solid red;
+
+    color: $color-grey;
+    font-size: 0.8rem;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &__date {
+    grid-area: date;
+    // border: 1px solid red;
+
+    text-align: end;
+
+    font-size: 0.8rem;
+    color: $color-grey;
+  }
+}
+
+.user-detail {
+  height: 100vh;
+  width: 90%;
+
+  overflow: scroll;
+
+  max-width: 28rem;
+
+  position: fixed;
+  top: 0;
+  right: -100%;
+
+  z-index: $z-index-m;
+
+  transition: all 0.4s ease;
+
+  &--show {
+    right: 0;
+  }
+
+  background-color: $color-white;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 2.4rem;
+
+  padding: 2.4rem;
+
+  &__top {
+    height: max-content;
+    width: 100%;
+
+    padding-bottom: 3.2rem;
+    padding-top: 2.4rem;
+
+    border-bottom: 1px solid $color-light-grey;
+
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    justify-items: center;
+    align-content: flex-start;
+    // border: 1px solid red;
+
+    & .user-detail {
+      &__pic {
+        height: 9.6rem;
+        width: 9.6rem;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+
+        margin-bottom: 2.4rem;
+      }
+
+      &__name {
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        color: $color-grey;
+
+        margin-bottom: 0.4rem;
+      }
+
+      &__date {
+        font-size: 0.8rem;
+        color: $color-grey;
+      }
+    }
+  }
+
+  &__middle {
+    height: 100%;
+    width: 100%;
+
+    // border: 1px solid red;
+
+    display: grid;
+    grid-auto-flow: row;
+    align-content: flex-start;
+    justify-content: center;
+    row-gap: 1.8rem;
+
+    & .user-detail__info-tile {
+      // border: 1px solid red;
+      height: max-content;
+      width: max-content;
+
+      display: grid;
+      grid-template-areas:
+        "icon label label"
+        "content content x";
+      row-gap: 0.8rem;
+      column-gap: 0.8rem;
+      justify-content: flex-start;
+      align-items: flex-end;
+      justify-items: flex-start;
+      align-content: flex-end;
+
+      &__icon {
+        grid-area: icon;
+        // border: 1px solid red;
+      }
+
+      &__label {
+        grid-area: label;
+        // border: 1px solid red;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: $color-grey;
+      }
+
+      &__content {
+        padding-left: 0.4rem;
+        grid-area: content;
+        // border: 1px solid red;
+        font-size: 1.2rem;
+        color: $color-grey;
+      }
+    }
+
+    & .user-detail__grades {
+      height: max-content;
+      width: max-content;
+
+      // border: 1px solid red;
+
+      display: grid;
+      grid-auto-flow: row;
+      row-gap: 0.8rem;
+      // justify-content: flex-start;
+      // align-items: flex-end;
+      // justify-items: flex-start;
+      // align-content: flex-end;
+      row-gap: 1.6rem;
+
+      &__label {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: $color-grey;
+      }
+      &__content {
+        display: grid;
+        grid-auto-flow: row;
+        // justify-content: space-between;
+        row-gap: 1.2rem;
+        font-size: 1.3rem;
+        padding-bottom: 2.4rem;
+
+        border-bottom: 1px solid #eee;
+
+        &__course {
+          margin-top: 1.2rem;
+          font-weight: bold;
+          color: $color-grey;
+        }
+
+        &__tab {
+          margin-top: 0.6rem;
+          max-width: 24rem;
+          overflow: scroll;
+          display: grid;
+          grid-auto-flow: column;
+          // row-gap: 0.8rem;
+          column-gap: 1.2rem;
+          font-size: 1.2rem;
+        }
+        &__results {
+          display: grid;
+          grid-auto-flow: row;
+          justify-items: center;
+          row-gap: 0.8rem;
+          column-gap: 1.2rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    height: 9.6rem;
+    // width: 12rem;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > img {
+      height: 100%;
+
+      object-fit: contain;
+
+      filter: grayscale(100%);
+      opacity: 0.6;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

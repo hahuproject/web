@@ -1,0 +1,31 @@
+.auth_form_container {
+  height: auto;
+  max-width: 90vw;
+
+  & > :first-child {
+    height: 8rem;
+    width: 100%;
+
+    background-color: $color-primary;
+
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > img {
+      height: 5.6rem;
+      object-fit: contain;
+    }
+  }
+
+  & > :last-child {
+    padding: 2.4rem;
+    background-color: white;
+
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+  }
+}

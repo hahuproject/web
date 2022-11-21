@@ -1,0 +1,53 @@
+.check-box {
+  height: 4rem;
+  width: max-content;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 0.8rem;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  cursor: pointer;
+  user-select: none;
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--checked {
+    .check-box__box {
+      background-color: $color-primary;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        border: 1px solid $color-light-grey;
+        height: 1rem;
+        width: 1rem;
+
+        border-radius: 0.2rem;
+      }
+    }
+  }
+
+  &__box {
+    height: 1.4rem;
+    width: 1.4rem;
+    transition: all 0.4s ease;
+
+    border-radius: 0.2rem;
+
+    border: 1px solid $color-primary;
+    position: relative;
+  }
+
+  &__label {
+    font-size: 1rem;
+  }
+}

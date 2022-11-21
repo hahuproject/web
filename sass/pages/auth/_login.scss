@@ -1,0 +1,57 @@
+.login {
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+
+  // overflow: scroll;
+
+  background-image: linear-gradient($color-accent, $color-primary);
+
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 1.6rem;
+  align-content: center;
+  justify-items: center;
+
+  padding: 5vw 0rem;
+
+  @include respond(tab-land) {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  .login__form {
+    display: grid;
+    grid-auto-flow: row;
+    align-content: center;
+    justify-items: center;
+
+    &__label {
+      &--heading {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $color-primary;
+
+        margin-bottom: 1.2rem;
+      }
+
+      &--paragraph {
+        max-width: 27rem;
+        font-size: 1.2rem;
+        text-align: center;
+        color: $color-grey;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  &__register {
+    color: $color-white;
+
+    display: grid;
+    grid-auto-flow: column;
+    // column-gap: 1.2rem;
+    align-items: center;
+    justify-items: center;
+  }
+}

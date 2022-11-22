@@ -3,7 +3,7 @@ import _axios from "axios";
 enum URLS {
   DEV = "http://localhost:5000",
   PROD = "https://hahu-sms.herokuapp.com",
-  LOCAL = "http://127.0.0.1:5002",
+  LOCAL = "https://api.hahu.me",
   VPS = "http://18.134.74.142:5003",
 }
 

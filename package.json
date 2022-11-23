@@ -2,8 +2,8 @@
   "name": "hahu_sms_web",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/dawitaschalew-mock/hahu_sms_web.git",
-  "author": "Dawit Aschalew 0911164081 <dawitaschalew.mock@gmail.com>",
+  "repository": "https://github.com/hahuproject/web.git",
+  "author": "franol geleta 0922492122 <franolgeleta5@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.24.0",
